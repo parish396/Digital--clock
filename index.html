@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pro Digital Clock</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="controls">
+    <select id="timezoneSelect">
+      <option value="local">Local Time</option>
+      <option value="Asia/Kolkata">India</option>
+      <option value="America/New_York">New York</option>
+      <option value="Europe/London">London</option>
+      <option value="Asia/Tokyo">Tokyo</option>
+    </select>
+    <button id="toggleView">🕹 Toggle View</button>
+    <button id="toggleTheme">🌙 Dark Mode</button>
+    <button id="retroToggle">🧪 Retro Mode</button>
+  </div>
+
+  <div class="clock-container">
+    <div class="analog-clock" id="analogClock">
+      <div class="hand hour" id="hourHand"></div>
+      <div class="hand minute" id="minuteHand"></div>
+      <div class="hand second" id="secondHand"></div>
+      <div class="center-dot"></div>
+    </div>
+
+    <div class="digital-clock" id="digitalClock">
+      <h1 id="clock">00:00:00 AM</h1>
+      <p id="dateText">Date</p>
+    </div>
+  </div>
+
+  <div class="utility">
+    <div class="alarm">
+      <label>Set Alarm:</label>
+      <input type="time" id="alarmTime">
+    </div>
+
+    <div class="pomodoro">
+      <label>Pomodoro:</label>
+      <button id="startPomodoro">Start 25 min</button>
+      <div id="pomodoroTimer">25:00</div>
+    </div>
+  </div>
+
+  <audio id="beep" src="beep.mp3"></audio>
+  <audio id="alarmSound" src="alarm.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

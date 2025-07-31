@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(270deg, #1d2b64, #f8cdda);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  color: #00ffcc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body.light {
+  background: #f4f4f4;
+  color: #111;
+}
+
+body.retro {
+  background: black;
+  color: #0f0;
+  font-family: monospace;
+}
+
+.controls, .utility {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button, select {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #00ffcc;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background: rgba(255,255,255,0.1);
+  margin: 20px;
+}
+
+.digital-clock h1 {
+  font-size: 60px;
+  margin: 0;
+  text-shadow: 0 0 15px #00ffcc;
+}
+
+#dateText {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.analog-clock {
+  width: 200px;
+  height: 200px;
+  border: 6px solid #00ffcc;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 30px;
+  display: none;
+}
+
+.hand {
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  background: #00ffcc;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+}
+
+.hour {
+  width: 30%;
+  height: 6px;
+}
+
+.second {
+  background: red;
+  height: 2px;
+}
+
+.center-dot {
+  width: 10px;
+  height: 10px;
+  background: #00ffcc;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+}
+
+#pomodoroTimer {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+body.retro .digital-clock h1,
+body.retro #dateText,
+body.retro #pomodoroTimer {
+  color: #0f0;
+  text-shadow: 0 0 8px #0f0;
+}
